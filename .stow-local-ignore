@@ -1,0 +1,11 @@
+# Credential files
+
+# Ingore files
+.gitignore
+.dockerignore
+.git
+.gitmodules
+
+# Files
+DS_store
+README.md
