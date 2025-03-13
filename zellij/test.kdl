@@ -1,0 +1,17 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    pane split_direction="vertical" size="75%" {
+        pane 
+        pane 
+    }
+    pane split_direction="vertical" size="25%" {
+        pane size="30%" command="lazygit"
+        pane size="70%" command="btop"
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
+

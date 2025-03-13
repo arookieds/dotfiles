@@ -5,6 +5,7 @@
 .dockerignore
 .git
 .gitmodules
+.stowrc
 
 # Files
 DS_store
