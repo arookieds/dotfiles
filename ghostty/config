@@ -52,4 +52,4 @@ mouse-hide-while-typing = true
 # keybind=clear
 # keybind = all:cmd+f=toggle_fullscreen
 
-command = /usr/local/bin/nu --config $HOME/.config/nushell/config.nu --env-config $HOME/.config/nushell/env.nu
+command = /opt/homebrew/bin/nu --config $HOME/.config/nushell/config.nu --env-config $HOME/.config/nushell/env.nu

@@ -47,6 +47,7 @@ $env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podm
 
 $env.PATH ++= [
   "/usr/local/bin"
+  "/opt/homebrew/bin"
   "/usr/bin"
   "/bin"
   "/usr/sbin"
