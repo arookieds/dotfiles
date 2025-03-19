@@ -46,7 +46,7 @@ theme = "monokai pro octagon"
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 20
 title = ""
-
+clipboard-paste-protection = false
 mouse-hide-while-typing = true
 
 # keybind=clear

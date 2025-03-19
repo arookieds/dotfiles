@@ -182,7 +182,7 @@ alt-s = 'exec-and-forget open -a /Applications/Firefox.app'
 # alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
 
 alt-shift-semicolon = 'mode service'
-alt-shift-enter = 'mode apps'
+# alt-shift-enter = 'mode apps'
 
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
@@ -190,7 +190,8 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-# [mode.apps.binding]
+[mode.apps.binding]
+alt-shift-enter = 'mode main'
 # alt-w = ['exec-and-forget open -a /Applications/WezTerm.app', 'mode main']
 
 [workspace-to-monitor-force-assignment]

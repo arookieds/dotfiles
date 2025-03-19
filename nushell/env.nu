@@ -54,11 +54,18 @@ $env.PATH ++= [
   "/sbin"
   "/opt/podman/bin"
   $"($env.HOME)/.local/bin"
+  $"($env.HOME)/.cargo/bin"
+  $"($env.HOME)/.rye/shims"
 ]
+
+# Default shell
+$env.SHELL = "/opt/homebrew/bin/nu"  #--config $HOME/.config/nushell/config.nu --env-config $HOME/.config/nushell/env.nu"
 
 # Aliases
 alias l = ls -sam
 alias ll = ls -saml
+alias zls = zellij list-sessions
+alias zla = zellij list-aliases
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
