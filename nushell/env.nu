@@ -56,6 +56,8 @@ $env.PATH ++= [
   $"($env.HOME)/.local/bin"
 ]
 
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+
 # Aliases
 alias l = ls -sam
 alias ll = ls -saml

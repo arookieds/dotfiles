@@ -1,0 +1,8 @@
+# Ghostty
+ralt - g : "/Applications/Ghostty.app/Contents/MacOS/ghostty"
+
+# Notion apps
+## Notion
+ralt - n : "/Applications/Notion.app/Contents/MacOS/Notion"
+## Notion Calendar
+ralt - c : "/Applications/Notion Calendar.app/Contents/MacOS/Notion Calendar"
