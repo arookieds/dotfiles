@@ -46,10 +46,12 @@ theme = "monokai pro octagon"
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 20
 title = ""
+shell-integration = none
 
 mouse-hide-while-typing = true
 
 # keybind=clear
 # keybind = all:cmd+f=toggle_fullscreen
-
+# command = /usr/local/bin/nu
 command = /usr/local/bin/nu --config $HOME/.config/nushell/config.nu --env-config $HOME/.config/nushell/env.nu
+# command = "SHELL = /usr/local/bin/nu"

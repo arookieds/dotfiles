@@ -30,6 +30,9 @@ def create_right_prompt [] {
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
+# $env.ZELLIJ_AUTO_ATTACH = true
+# $env.ZELLIJ_AUTO_EXIT = false
+
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 # FIXME: This default is not implemented in rust code as of 2023-09-08.
@@ -45,7 +48,7 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 # Docker socker
 $env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podman/podman-machine-default-api.sock"
 
-$env.PATH ++= [
+$env.PATH = [
   "/usr/local/bin"
   "/opt/homebrew/bin"
   "/usr/bin"
@@ -53,6 +56,7 @@ $env.PATH ++= [
   "/usr/sbin"
   "/sbin"
   "/opt/podman/bin"
+  $"($env.HOME)/.cargo/bin"
   $"($env.HOME)/.local/bin"
 ]
 
@@ -61,6 +65,8 @@ $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 # Aliases
 alias l = ls -sam
 alias ll = ls -saml
+alias zls = zellij list-sessions
+alias zla = zellij list-aliases
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
