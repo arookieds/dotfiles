@@ -59,6 +59,7 @@ $env.PATH = [
   "/sbin"
   "/opt/podman/bin"
   $"($env.HOME)/.cargo/bin"
+  $"($env.HOME)/.rye/shims"
   $"($env.HOME)/.atuin/bin"
   $"($env.HOME)/.local/bin"
 ]

@@ -1,4 +1,4 @@
-add_newline = false
+add_newline = true
 # A minimal left prompt
 format = """$directory$character"""
 palette = "catppuccin_mocha"
@@ -13,7 +13,12 @@ success_symbol = '[➜](bold green)'
 [directory.substitutions]
 '~/tests/starship-custom' = 'work-project'
 
+# [git_commit]
+# disabled = false
+# format = '[\($hash$tag\)]($style) '
+
 [git_branch]
+always_show_remote = true
 format =  '[$symbol$branch(:$remote_branch)]($style)'
 
 [aws]
