@@ -140,7 +140,7 @@ alt-f = 'fullscreen'
 alt-ctrl-f = 'layout floating tiling'
 
 cmd-h = []
-# cmd-alt-h = []
+cmd-alt-h = []
 
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -212,9 +212,16 @@ f = ['exec-and-forget open -a /Applications/Firefox.app', 'mode main']
 m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-    1 = 'main'
+    1 = 'S6-L'
     2 = 'S6-L'
-    3 = 'S6-R'
-    4 = 'main'
-    5 = 'S6-L'
+    3 = 'S6-L'
+    4 = 'S6-R'
+    5 = 'S6-R'
     6 = 'S6-R'
+# [workspace-to-monitor-force-assignment]
+#     1 = 'main'
+#     2 = 'S6-L'
+#     3 = 'S6-R'
+#     4 = 'main'
+#     5 = 'S6-L'
+#     6 = 'S6-R'

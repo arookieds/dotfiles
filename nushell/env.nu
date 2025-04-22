@@ -48,6 +48,8 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 # Docker socker
 $env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podman/podman-machine-default-api.sock"
 
+$env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
+
 $env.PATH = [
   "/usr/local/bin"
   "/opt/homebrew/bin"
@@ -57,6 +59,7 @@ $env.PATH = [
   "/sbin"
   "/opt/podman/bin"
   $"($env.HOME)/.cargo/bin"
+  $"($env.HOME)/.atuin/bin"
   $"($env.HOME)/.local/bin"
 ]
 
