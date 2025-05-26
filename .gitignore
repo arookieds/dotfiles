@@ -1,8 +1,11 @@
 # Folder
-
+/lima/
 
 # Files
+**/.DS_Store
 **/history*
 **/credentials*
 **.bak
 **.log*
+atuin/atuin-receipt.json
+atuin/atuin-receipt.json
