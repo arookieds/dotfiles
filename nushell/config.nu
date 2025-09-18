@@ -77,7 +77,7 @@ starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.n
 
 # ASDF
 let shims_dir = (
-  if ( $env | get --ignore-errors ASDF_DATA_DIR | is-empty ) {
+  if ( $env | get --optional ASDF_DATA_DIR | is-empty ) {
     $env.HOME | path join '.asdf'
   } else {
     $env.ASDF_DATA_DIR
@@ -86,7 +86,7 @@ let shims_dir = (
 $env.PATH = ( $env.PATH | split row (char esep) | where { |p| $p != $shims_dir } | prepend $shims_dir )
 
 let asdf_data_dir: string = (
-  if ( $env | get --ignore-errors ASDF_DATA_DIR | is-empty ) {
+  if ( $env | get --optional ASDF_DATA_DIR | is-empty ) {
     $env.HOME | path join '.asdf'
   } else {
     $env.ASDF_DATA_DIR
@@ -94,7 +94,7 @@ let asdf_data_dir: string = (
 )
 
 let asdf_data_dir = (
-  if ( $env | get --ignore-errors ASDF_DATA_DIR | is-empty ) {
+  if ( $env | get --optional ASDF_DATA_DIR | is-empty ) {
     $env.HOME | path join '.asdf'
   } else {
     $env.ASDF_DATA_DIR

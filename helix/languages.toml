@@ -1,0 +1,69 @@
+### Language servers ###
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
+preview = true
+show-fixes = true
+include = ["*.py"]
+
+[language-server.ruff.config.settings]
+lineLength = 80
+logLevel = "debug"
+
+[language-server.ruff.analyze]
+detect-string-imports = true
+
+[language-server.ruff.lint.pydocstyle]
+convention = "google"
+
+[language-server.ruff.config.settings.lint]
+select = [
+  "E",
+  "F",
+  "W",
+  "B",
+  "I",
+  "RUF",
+  "N",
+  "SIM",
+  "LOG",
+  "ERA",
+  "W",
+  "D",
+  "UP",
+  "ANN",
+  "ASYNC",
+  "S",
+  "RET",
+  "TCH",
+  "ARG",
+  "PTH",
+  "DOC",
+]
+preview = true
+
+[language-server.ruff.config.settings.format]
+preview = true
+quote-style = "double"
+docstring-code-format = true
+indent-style = "space"
+skip-magic-trailing-comma = true
+
+[language-server.pylsp]
+command = "pylsp"
+args = ["-vv"]
+# except = ["format"]
+
+
+### Languages ###
+[[language]]
+name = "python"
+language-id = "python"
+auto-format = true
+language-servers = ["pylsp", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"] }
+file-types = ["py", "ipynb"]
+comment-token = "#"
+shebangs = ["python"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
+

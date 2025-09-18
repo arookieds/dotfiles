@@ -54,20 +54,8 @@ automatically-unhide-macos-hidden-apps = false
 if.app-name-regex-substring = 'telegram'
 run = 'layout floating'
 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'finder'
-# run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'podman'
-# run = 'layout floating'
- 
 [[on-window-detected]]
 if.app-name-regex-substring = 'camera'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'dicord'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -75,12 +63,8 @@ if.app-name-regex-substring = 'preview'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'discord'
-run = 'layout floating'
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'mail'
-run = 'move-node-to-workspace 12'
+run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'whatsapp'
@@ -88,11 +72,15 @@ run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'podman'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'weather'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'notion'
-run = 'move-node-to-workspace 12'
+run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'firefox'
@@ -100,7 +88,7 @@ run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'tor'
-run = 'move-node-to-workspace 6'
+run = 'move-node-to-workspace 7'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'vlc'
@@ -124,16 +112,23 @@ run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'datagrip'
-run = 'move-node-to-workspace 9'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'dbeaver'
-run = 'move-node-to-workspace 9'
+run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'slack'
-run = 'move-node-to-workspace 5'
+run = 'move-node-to-workspace 9'
 
+[[on-window-detected]]
+if.app-name-regex-substring = 'nordpass'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'nordvpn'
+run = 'move-node-to-workspace 8'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -194,9 +189,14 @@ cmd-alt-h = []
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
+cmd-alt-slash = 'layout tiles horizontal vertical'
+cmd-alt-comma = 'layout accordion horizontal vertical'
+
+# Modes
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 alt-backslash = 'mode move'
+alt-shift-r = 'mode resize'
 
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -217,9 +217,6 @@ cmd-shift-h = 'join-with left'
 cmd-shift-j = 'join-with down'
 cmd-shift-k = 'join-with up'
 cmd-shift-l = 'join-with right'
-
-cmd-alt-slash = 'layout tiles horizontal vertical'
-cmd-alt-comma = 'layout accordion horizontal vertical'
 
 cmd-1 = 'workspace 1'
 cmd-2 = 'workspace 2'
@@ -247,8 +244,6 @@ cmd-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
 cmd-shift-minus = 'move-node-to-workspace 11 --focus-follows-window'
 cmd-shift-equal = 'move-node-to-workspace 12 --focus-follows-window'
 
-alt-shift-r = 'mode resize'
-
 [mode.resize.binding]
 h = 'resize width +50'
 j = 'resize height +50'
@@ -273,18 +268,34 @@ f = ['exec-and-forget open -a /Applications/Firefox.app', 'mode main']
 m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-    1 = 'S6-L'
-    2 = 'S6-L'
-    3 = 'S6-L'
-    4 = 'S6-L'
-    5 = 'S6-L'
-    6 = 'S6-L'
-    7 = 'S6-R'
-    8 = 'S6-R'
-    9 = 'S6-R'
-    10 = 'S6-R'
-    11 = 'S6-R'
-    12 = 'S6-R'
+    1 = 'VG34VQL3A'
+    2 = 'VG34VQL3A'
+    3 = 'VG34VQL3A'
+    4 = 'VG34VQL3A'
+    5 = 'VG34VQL3A'
+    6 = 'VG34VQL3A'
+    7 = 'VG34VQL3A'
+    8 = 'VG34VQL3A'
+    9 = 'VG34VQL3A'
+    10 = 'Odyssey G5'
+    11 = 'Odyssey G5'
+    12 = 'Odyssey G5'
+
+# [workspace-to-monitor-force-assignment]
+#     # 1 = 'S6-L'
+#     # 2 = 'S6-L'
+#     1 = 'VG34VQL3A'
+#     2 = 'VG34VQL3A'
+#     3 = 'S6-L'
+#     4 = 'S6-L'
+#     5 = 'S6-L'
+#     6 = 'S6-L'
+#     7 = 'S6-R'
+#     8 = 'S6-R'
+#     9 = 'S6-R'
+#     10 = 'S6-R'
+#     11 = 'S6-R'
+#     12 = 'S6-R'
 # [workspace-to-monitor-force-assignment]
 #     1 = 'main'
 #     2 = 'S6-L'
