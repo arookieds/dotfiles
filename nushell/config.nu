@@ -6,7 +6,8 @@ $env.config = {
     sync_on_enter: true
     isolation: false
   }
-  
+
+  edit_mode: "vi"
   buffer_editor: "hx"
   
   filesize: {

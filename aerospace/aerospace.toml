@@ -71,6 +71,10 @@ if.app-name-regex-substring = 'whatsapp'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'system setting'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'podman'
 run = 'move-node-to-workspace 8'
 
