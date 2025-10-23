@@ -30,6 +30,11 @@ def create_right_prompt [] {
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
+def rstsb [] {
+    brew services restart sketchybar
+    brew services restart borders
+}
+
 # $env.ZELLIJ_AUTO_ATTACH = true
 # $env.ZELLIJ_AUTO_EXIT = false
 
@@ -71,6 +76,7 @@ alias l = ls -sam
 alias ll = ls -saml
 alias zls = zellij list-sessions
 alias zla = zellij list-aliases
+# alias rstsb = brew services restart sketchybar; brew services restart borders;
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace

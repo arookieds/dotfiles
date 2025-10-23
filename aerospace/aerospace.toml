@@ -87,6 +87,10 @@ if.app-name-regex-substring = 'notion'
 run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'comet'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'firefox'
 run = 'move-node-to-workspace 7'
 
@@ -97,6 +101,10 @@ run = 'move-node-to-workspace 7'
 [[on-window-detected]]
 if.app-name-regex-substring = 'vlc'
 run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'spotify'
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'transmission'
