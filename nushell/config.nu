@@ -103,3 +103,4 @@ let asdf_data_dir = (
 )
 
 source "~/.asdf/completions/nushell.nu"
+source $"($nu.home-path)/.cargo/env.nu"

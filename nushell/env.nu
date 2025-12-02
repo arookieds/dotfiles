@@ -56,6 +56,7 @@ $env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podm
 $env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
 
 $env.PATH = [
+  $"($env.HOME)/.antigravity/antigravity/bin",
   $"($env.HOME)/.asdf/shims",
   $"($env.HOME)/.config/carapace/bin",
   $env.GHOSTTY_BIN_DIR,
