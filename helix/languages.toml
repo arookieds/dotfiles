@@ -67,3 +67,18 @@ comment-token = "#"
 shebangs = ["python"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
 
+[[language]]
+name = "markdown"
+language-servers = ["marksman", "markdown-oxide", "mpls"] 
+
+[language-server.mpls]
+command = "/opt/homebrew/bin/mpls"
+config = { markdown.preview.auto = true }
+
+[language-server.marksman]
+command = "/opt/homebrew/bin/marksman"
+config = { markdown.preview.auto = true }
+
+[language-server.markdown-oxide]
+command = "/opt/homebrew/bin/markdown-oxide"
+config = { markdown.preview.auto = true }
