@@ -1,13 +1,16 @@
 ### Language servers ###
+
+
+# -------------------------------------------------------------------------
+# RUFF LSP (For blazing fast linting and diagnostics)
+# -------------------------------------------------------------------------
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
 preview = true
 show-fixes = true
-include = ["*.py"]
 
 [language-server.ruff.config.settings]
-lineLength = 80
 logLevel = "debug"
 
 [language-server.ruff.analyze]
@@ -16,60 +19,91 @@ detect-string-imports = true
 [language-server.ruff.lint.pydocstyle]
 convention = "google"
 
-[language-server.ruff.config.settings.lint]
-select = [
-  "E",
-  "F",
-  "W",
-  "B",
-  "I",
-  "RUF",
-  "N",
-  "SIM",
-  "LOG",
-  "ERA",
-  "W",
-  "D",
-  "UP",
-  "ANN",
-  "ASYNC",
-  "S",
-  "RET",
-  "TCH",
-  "ARG",
-  "PTH",
-  "DOC",
-]
-preview = true
+# -------------------------------------------------------------------------
+# PYRIGHT LSP (NEW: For superior static type checking and core LSP features)
+# -------------------------------------------------------------------------
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
 
-[language-server.ruff.config.settings.format]
-preview = true
-quote-style = "double"
-docstring-code-format = true
-indent-style = "space"
-skip-magic-trailing-comma = true
+# -------------------------------------------------------------------------
+# RUST: The standard, high-performance LSP for Rust
+# -------------------------------------------------------------------------
+[language-server.rust-analyzer]
+command = "rust-analyzer"
 
-[language-server.pylsp]
-command = "pylsp"
-args = ["-vv"]
-# except = ["format"]
+# -------------------------------------------------------------------------
+# TOML/YAML: Fast, robust LSP for configuration files (install taplo-cli)
+# -------------------------------------------------------------------------
+[language-server.taplo]
+command = "taplo"
+args = ["lsp", "stdio"]
 
+# -------------------------------------------------------------------------
+# JAVASCRIPT/TYPESCRIPT: Standard LSP using tsserver
+# -------------------------------------------------------------------------
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
 
-### Languages ###
+# -------------------------------------------------------------------------
+# HTML: Standard LSP from VSCode team
+# -------------------------------------------------------------------------
+[language-server.html-language-server]
+command = "html-languageserver"
+args = ["--stdio"]
+
+# -------------------------------------------------------------------------
+# CSS: Standard LSP from VSCode team (handles CSS, SCSS, LESS)
+# -------------------------------------------------------------------------
+[language-server.css-language-server]
+command = "css-languageserver"
+args = ["--stdio"]
+
+# -------------------------------------------------------------------------
+# Python (.py)
+# -------------------------------------------------------------------------
 [[language]]
 name = "python"
 language-id = "python"
 auto-format = true
-language-servers = ["pylsp", "ruff"]
-formatter = { command = "ruff", args = ["format", "-"] }
+language-servers = ["pyright", "ruff"]
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "uv"
+args = ["run", "python", "-m", "debugpy.adapter"]
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [{ name = "entrypoint", completion = "filename", default = "." }]
+args = { mode = "debug", program = "{0}" }
+
+[language.formatter]
+command = "black"
+args = ["-", "--quiet", "--fast"]
+
 file-types = ["py", "ipynb"]
 comment-token = "#"
 shebangs = ["python"]
-roots = ["pyproject.toml", "setup.py", "poetry.lock", ".git", ".jj", ".venv/"]
+roots = [
+  "pyproject.toml",
+  "setup.py",
+  "poetry.lock",
+  ".git",
+  ".jj",
+  ".venv/",
+  "pyrightconfig.json",
+]
 
+# -------------------------------------------------------------------------
+# Markdown (.md)
+# -------------------------------------------------------------------------
 [[language]]
 name = "markdown"
-language-servers = ["marksman", "markdown-oxide", "mpls"] 
+language-servers = ["marksman", "markdown-oxide", "mpls"]
 
 [language-server.mpls]
 command = "/opt/homebrew/bin/mpls"
@@ -82,3 +116,78 @@ config = { markdown.preview.auto = true }
 [language-server.markdown-oxide]
 command = "/opt/homebrew/bin/markdown-oxide"
 config = { markdown.preview.auto = true }
+
+# -------------------------------------------------------------------------
+# RUST (.rs)
+# -------------------------------------------------------------------------
+[[language]]
+name = "rust"
+auto-format = true
+language-servers = ["rust-analyzer"]
+formatter = { command = "rustfmt", args = ["--emit", "stdout"] }
+
+# [language.debugger]
+# name = "codelldb"
+# transport = "stdio"
+# command = "codelldb"
+
+# [[language.debugger.templates]]
+# name = "debug-file"
+# request = "launch"
+# completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
+# args = { mode = "debug", program = "{0}"}
+
+# -------------------------------------------------------------------------
+# TOML (.toml)
+# -------------------------------------------------------------------------
+[[language]]
+name = "toml"
+auto-format = true
+language-servers = ["taplo"]
+formatter = { command = "taplo", args = ["format", "-"] }
+
+# -------------------------------------------------------------------------
+# YAML (.yaml, .yml)
+# -------------------------------------------------------------------------
+[[language]]
+name = "yaml"
+# YAML formatting is typically handled by the LSP (Taplo), no separate formatter needed
+language-servers = ["taplo"]
+formatter = { command = "taplo", args = ["format", "-"] }
+
+# -------------------------------------------------------------------------
+# JAVASCRIPT (.js)
+# -------------------------------------------------------------------------
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+# Using prettier and telling it the file type via --stdin-filepath
+formatter = { command = "prettier", args = ["--stdin-filepath", "index.js"] }
+
+# -------------------------------------------------------------------------
+# TYPESCRIPT (.ts)
+# -------------------------------------------------------------------------
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "index.ts"] }
+
+# -------------------------------------------------------------------------
+# HTML (.html)
+# -------------------------------------------------------------------------
+[[language]]
+name = "html"
+auto-format = true
+language-servers = ["html-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "index.html"] }
+
+# -------------------------------------------------------------------------
+# CSS (.css)
+# -------------------------------------------------------------------------
+[[language]]
+name = "css"
+auto-format = true
+language-servers = ["css-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "style.css"] }

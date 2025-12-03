@@ -3,11 +3,17 @@ theme = "catppuccin_mocha"
 [editor]
 line-number = "relative"
 mouse = true
+bufferline = "always"
 cursorline = true
+cursorcolumn = true
 true-color = true
-rulers = [80]
 color-modes = true
+rulers = [80,89]
 completion-timeout = 15
+auto-format = true
+
+[editor.auto-save]
+focus-lost = true
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
@@ -23,8 +29,15 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.gutters]
+layout = ["diagnostics","diff","spacer","line-numbers"]
+
+[editor.gutters.line-numbers]
+min-width = 3
+
 [editor.indent-guides]
 render = true
+skip-levels = 1
 
 [editor.soft-wrap]
 enable = true
@@ -48,3 +61,10 @@ display-inlay-hints = true
 hidden = false
 ignore = false
 git-ignore = false
+
+[keys.normal]
+"=" = "format_selections"
+"space" = { "=" = ":format" }
+
+[keys.normal."+"]
+p = ":run-shell-command uv run %{buffer_name}"
