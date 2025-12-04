@@ -69,18 +69,6 @@ language-id = "python"
 auto-format = true
 language-servers = ["pyright", "ruff"]
 
-[language.debugger]
-name = "debugpy"
-transport = "stdio"
-command = "uv"
-args = ["run", "python", "-m", "debugpy.adapter"]
-
-[[language.debugger.templates]]
-name = "source"
-request = "launch"
-completion = [{ name = "entrypoint", completion = "filename", default = "." }]
-args = { mode = "debug", program = "{0}" }
-
 [language.formatter]
 command = "black"
 args = ["-", "--quiet", "--fast"]
@@ -126,16 +114,43 @@ auto-format = true
 language-servers = ["rust-analyzer"]
 formatter = { command = "rustfmt", args = ["--emit", "stdout"] }
 
-# [language.debugger]
-# name = "codelldb"
-# transport = "stdio"
-# command = "codelldb"
+[language.debugger]
+name = "lldb-dap"
+transport = "stdio"
+command = "lldb"
 
-# [[language.debugger.templates]]
-# name = "debug-file"
-# request = "launch"
-# completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
-# args = { mode = "debug", program = "{0}"}
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [{ name = "binary", completion = "filename" }]
+args = { program = "{0}" }
+
+[[language.debugger.templates]]
+name = "binary (terminal)"
+request = "launch"
+completion = [{ name = "binary", completion = "filename" }]
+args = { program = "{0}", runInTerminal = true }
+
+[[language.debugger.templates]]
+name = "attach"
+request = "attach"
+completion = ["pid"]
+args = { pid = "{0}" }
+
+[[language.debugger.templates]]
+name = "gdbserver attach"
+request = "attach"
+completion = [
+  { name = "lldb connect url", default = "connect://localhost:3333" },
+  { name = "file", completion = "filename" },
+  "pid",
+]
+args = { attachCommands = [
+  "platform select remote-gdb-server",
+  "platform connect {0}",
+  "file {1}",
+  "attach {2}",
+] }
 
 # -------------------------------------------------------------------------
 # TOML (.toml)
