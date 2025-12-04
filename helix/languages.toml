@@ -69,6 +69,19 @@ language-id = "python"
 auto-format = true
 language-servers = ["pyright", "ruff"]
 
+[language.debugger]
+name = "debugpy"
+transport = ""
+command = ""
+args = []
+
+# 3. DEFINE TEMPLATES LOCALLY
+[[language.debugger.templates]]
+name = "attach-to-server"
+request = "attach"
+completion = []
+args = {}
+
 [language.formatter]
 command = "black"
 args = ["-", "--quiet", "--fast"]

@@ -8,7 +8,7 @@ cursorline = true
 cursorcolumn = true
 true-color = true
 color-modes = true
-rulers = [80,89]
+rulers = [80, 89]
 completion-timeout = 15
 auto-format = true
 
@@ -18,7 +18,15 @@ focus-lost = true
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
 #center = ["file-name"]
-right = ["diagnostics", "workspace-diagnostics", "version-control", "selections", "position", "file-encoding", "file-type"]
+right = [
+  "diagnostics",
+  "workspace-diagnostics",
+  "version-control",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-type",
+]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -30,7 +38,7 @@ normal = "block"
 select = "underline"
 
 [editor.gutters]
-layout = ["diagnostics","diff","spacer","line-numbers"]
+layout = ["diagnostics", "diff", "spacer", "line-numbers"]
 
 [editor.gutters.line-numbers]
 min-width = 3
@@ -65,6 +73,10 @@ git-ignore = false
 [keys.normal]
 "=" = "format_selections"
 "space" = { "=" = ":format" }
+C-k = "copy_selection_on_prev_line"
+C-j = "copy_selection_on_next_line"
 
-[keys.normal."+"]
-p = ":run-shell-command uv run %{buffer_name}"
+[keys.normal.S-d.p]
+r = ":run-shell-command uv run %{buffer_name}"
+s = ":run-shell-command debugpy --listen 127.0.0.1:5678 --wait-for-client --log-to logs %{buffer_name}"
+d = ":debug-remote 127.0.0.1:5678"
