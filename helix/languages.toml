@@ -2,6 +2,13 @@
 
 
 # -------------------------------------------------------------------------
+# Harper-ls - English Spell checker
+# -------------------------------------------------------------------------
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+# -------------------------------------------------------------------------
 # RUFF LSP (For blazing fast linting and diagnostics)
 # -------------------------------------------------------------------------
 [language-server.ruff]
@@ -67,7 +74,7 @@ args = ["--stdio"]
 name = "python"
 language-id = "python"
 auto-format = true
-language-servers = ["pyright", "ruff"]
+language-servers = ["pyright", "ruff", "harper-ls"]
 
 [language.debugger]
 name = "debugpy"
@@ -104,7 +111,7 @@ roots = [
 # -------------------------------------------------------------------------
 [[language]]
 name = "markdown"
-language-servers = ["marksman", "markdown-oxide", "mpls"]
+language-servers = ["marksman", "markdown-oxide", "mpls", "harper-ls"]
 
 [language-server.mpls]
 command = "/opt/homebrew/bin/mpls"
@@ -124,7 +131,7 @@ config = { markdown.preview.auto = true }
 [[language]]
 name = "rust"
 auto-format = true
-language-servers = ["rust-analyzer"]
+language-servers = ["rust-analyzer", "harper-ls"]
 formatter = { command = "rustfmt", args = ["--emit", "stdout"] }
 
 [language.debugger]
@@ -171,7 +178,7 @@ args = { attachCommands = [
 [[language]]
 name = "toml"
 auto-format = true
-language-servers = ["taplo"]
+language-servers = ["taplo", "harper-ls"]
 formatter = { command = "taplo", args = ["format", "-"] }
 
 # -------------------------------------------------------------------------
@@ -180,7 +187,7 @@ formatter = { command = "taplo", args = ["format", "-"] }
 [[language]]
 name = "yaml"
 # YAML formatting is typically handled by the LSP (Taplo), no separate formatter needed
-language-servers = ["taplo"]
+language-servers = ["taplo", "harper-ls"]
 formatter = { command = "taplo", args = ["format", "-"] }
 
 # -------------------------------------------------------------------------
@@ -189,7 +196,7 @@ formatter = { command = "taplo", args = ["format", "-"] }
 [[language]]
 name = "javascript"
 auto-format = true
-language-servers = ["typescript-language-server"]
+language-servers = ["typescript-language-server", "harper-ls"]
 # Using prettier and telling it the file type via --stdin-filepath
 formatter = { command = "prettier", args = ["--stdin-filepath", "index.js"] }
 
@@ -199,7 +206,7 @@ formatter = { command = "prettier", args = ["--stdin-filepath", "index.js"] }
 [[language]]
 name = "typescript"
 auto-format = true
-language-servers = ["typescript-language-server"]
+language-servers = ["typescript-language-server", "harper-ls"]
 formatter = { command = "prettier", args = ["--stdin-filepath", "index.ts"] }
 
 # -------------------------------------------------------------------------
@@ -208,7 +215,7 @@ formatter = { command = "prettier", args = ["--stdin-filepath", "index.ts"] }
 [[language]]
 name = "html"
 auto-format = true
-language-servers = ["html-language-server"]
+language-servers = ["html-language-server", "harper-ls"]
 formatter = { command = "prettier", args = ["--stdin-filepath", "index.html"] }
 
 # -------------------------------------------------------------------------
