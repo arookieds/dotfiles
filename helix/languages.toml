@@ -54,6 +54,13 @@ command = "typescript-language-server"
 args = ["--stdio"]
 
 # -------------------------------------------------------------------------
+# JSON: Standard LSP from VSCode team
+# -------------------------------------------------------------------------
+[language-server.json-language-server]
+command = "json-languageserver"
+args = ["--stdio"]
+
+# -------------------------------------------------------------------------
 # HTML: Standard LSP from VSCode team
 # -------------------------------------------------------------------------
 [language-server.html-language-server]
@@ -208,6 +215,15 @@ name = "typescript"
 auto-format = true
 language-servers = ["typescript-language-server", "harper-ls"]
 formatter = { command = "prettier", args = ["--stdin-filepath", "index.ts"] }
+
+# -------------------------------------------------------------------------
+# JSON (.json)
+# -------------------------------------------------------------------------
+[[language]]
+name = "json"
+auto-format = true
+language-servers = ["json-language-server", "harper-ls"]
+formatter = { command = "prettier", args = ["--parser", "json"] }
 
 # -------------------------------------------------------------------------
 # HTML (.html)
