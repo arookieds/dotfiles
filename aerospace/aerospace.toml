@@ -1,12 +1,14 @@
 after-startup-command = [
   'exec-and-forget /usr/local/bin/sketchybar --reload',
-  'exec-and-forget /usr/local/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget /usr/local/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 ]
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
   '/usr/local/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-  'exec-and-forget /usr/local/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+  'exec-and-forget /usr/local/bin/borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 ]
 
 # Start AeroSpace at login
@@ -62,62 +64,12 @@ run = 'layout floating'
 if.app-name-regex-substring = 'preview'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'mail'
-run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'whatsapp'
-run = 'move-node-to-workspace 5'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'system setting'
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'podman'
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'weather'
-run = 'move-node-to-workspace 8'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'notion'
-run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'comet'
-run = 'move-node-to-workspace 7'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'firefox'
-run = 'move-node-to-workspace 7'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'tor'
-run = 'move-node-to-workspace 7'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'vlc'
-run = 'move-node-to-workspace 6'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'spotify'
-run = 'move-node-to-workspace 5'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'transmission'
-run = 'move-node-to-workspace 6'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'finder'
-run = 'move-node-to-workspace 6'
-
+# Workspace 1 - Terminal
 [[on-window-detected]]
 if.app-name-regex-substring = 'ghostty'
 run = 'move-node-to-workspace 1'
 
+# Workspace 2 - programming tools
 [[on-window-detected]]
 if.app-name-regex-substring = 'pycharm'
 run = 'move-node-to-workspace 2'
@@ -131,8 +83,78 @@ if.app-name-regex-substring = 'dbeaver'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'dbgate'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'antigravity'
+run = 'move-node-to-workspace 2'
+
+# Workspace 3 - Taking notes
+[[on-window-detected]]
+if.app-name-regex-substring = 'joplin'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'notion'
+run = 'move-node-to-workspace 3'
+
+# Workspace 4 - Browsers (actions)
+[[on-window-detected]]
+if.app-name-regex-substring = 'firefox'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'tor'
+run = 'move-node-to-workspace 4'
+
+# Workspace 5 - Communications
+[[on-window-detected]]
 if.app-name-regex-substring = 'slack'
-run = 'move-node-to-workspace 9'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'whatsapp'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'circle'
+run = 'move-node-to-workspace 5'
+
+# Workspace 6 - Files managements
+[[on-window-detected]]
+if.app-name-regex-substring = 'finder'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'cyberduck'
+run = 'move-node-to-workspace 6'
+
+# Workspace 7 - Entertainment
+[[on-window-detected]]
+if.app-name-regex-substring = 'spotify'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'vlc'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'transmission'
+run = 'move-node-to-workspace 7'
+
+# Workspace 8 - Desktop tools
+[[on-window-detected]]
+if.app-name-regex-substring = 'system setting'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'podman'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'weather'
+run = 'move-node-to-workspace 8'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'nordpass'
@@ -141,6 +163,28 @@ run = 'move-node-to-workspace 8'
 [[on-window-detected]]
 if.app-name-regex-substring = 'nordvpn'
 run = 'move-node-to-workspace 8'
+
+# Workspace 9 - Management
+[[on-window-detected]]
+if.app-name-regex-substring = 'mail'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'notion calendar'
+run = 'move-node-to-workspace 9'
+
+# Workspace 10 - Browsers (Reading)
+[[on-window-detected]]
+if.app-name-regex-substring = 'comet'
+run = 'move-node-to-workspace 10'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'numbers'
+run = 'move-node-to-workspace 10'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'pages'
+run = 'move-node-to-workspace 10'
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -156,11 +200,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 10
-inner.vertical =   10
-outer.left =       20
-outer.bottom =     20
-outer.top =        45
-outer.right =      20
+inner.vertical = 10
+outer.left = 20
+outer.bottom = 20
+outer.top = 45
+outer.right = 20
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -269,7 +313,10 @@ esc = 'mode main'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 [mode.apps.binding]
@@ -280,18 +327,18 @@ f = ['exec-and-forget open -a /Applications/Firefox.app', 'mode main']
 m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-    1 = 'VG34VQL3A'
-    2 = 'VG34VQL3A'
-    3 = 'VG34VQL3A'
-    4 = 'VG34VQL3A'
-    5 = 'VG34VQL3A'
-    6 = 'VG34VQL3A'
-    7 = 'VG34VQL3A'
-    8 = 'VG34VQL3A'
-    9 = 'VG34VQL3A'
-    10 = 'Odyssey G5'
-    11 = 'Odyssey G5'
-    12 = 'Odyssey G5'
+1 = 'VG34VQL3A'
+2 = 'VG34VQL3A'
+3 = 'VG34VQL3A'
+4 = 'VG34VQL3A'
+5 = 'VG34VQL3A'
+6 = 'VG34VQL3A'
+7 = 'VG34VQL3A'
+8 = 'VG34VQL3A'
+9 = 'VG34VQL3A'
+10 = 'Odyssey G5'
+11 = 'Odyssey G5'
+12 = 'Odyssey G5'
 
 # [workspace-to-monitor-force-assignment]
 #     # 1 = 'S6-L'
