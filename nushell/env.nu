@@ -59,6 +59,9 @@ if $env.GHOSTTY_BIN_DIR? == null {
     $env.GHOSTTY_BIN_DIR = " /Applications/Ghostty.app/Contents/MacOS";
 }
 
+# Default editor
+$env.EDITOR = "hx"
+
 $env.PATH = [
   $"($env.HOME)/.antigravity/antigravity/bin",
   $"($env.HOME)/.asdf/shims",
