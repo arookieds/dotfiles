@@ -40,7 +40,7 @@ args = ["--stdio"]
 command = "rust-analyzer"
 
 # -------------------------------------------------------------------------
-# TOML/YAML: Fast, robust LSP for configuration files (install taplo-cli)
+# TOML: Fast, robust LSP for configuration files (install taplo-cli)
 # -------------------------------------------------------------------------
 [language-server.taplo]
 command = "taplo"
@@ -52,6 +52,28 @@ args = ["lsp", "stdio"]
 [language-server.typescript-language-server]
 command = "typescript-language-server"
 args = ["--stdio"]
+
+
+# # YAML: Standard LSP from VSCode team
+# # -------------------------------------------------------------------------
+[language-server.yaml-language-server]
+command = "yaml-language-server"
+args = ["--stdio"]
+
+[language-server.yaml-language-server.config.yaml.schemas]
+kubernetes = "*.yaml"
+"http://json.schemastore.org/github-workflow" = ".github/workflows/*"
+"http://json.schemastore.org/github-action" = ".github/action.{yml,yaml}"
+"http://json.schemastore.org/ansible-stable-2.9" = "roles/tasks/*.{yml,yaml}"
+"http://json.schemastore.org/prettierrc" = ".prettierrc.{yml,yaml}"
+"http://json.schemastore.org/kustomization" = "kustomization.{yml,yaml}"
+"http://json.schemastore.org/ansible-playbook" = "*play*.{yml,yaml}"
+"http://json.schemastore.org/chart" = "Chart.{yml,yaml}"
+"https://json.schemastore.org/dependabot-v2" = ".github/dependabot.{yml,yaml}"
+"https://json.schemastore.org/gitlab-ci" = "*gitlab-ci*.{yml,yaml}"
+"https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json" = "*api*.{yml,yaml}"
+"https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" = "*docker-compose*.{yml,yaml}"
+"https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json" = "*flow*.{yml,yaml}"
 
 # -------------------------------------------------------------------------
 # JSON: Standard LSP from VSCode team
@@ -184,6 +206,7 @@ args = { attachCommands = [
 # -------------------------------------------------------------------------
 [[language]]
 name = "toml"
+file-types = ["toml"]
 auto-format = true
 language-servers = ["taplo", "harper-ls"]
 formatter = { command = "taplo", args = ["format", "-"] }
@@ -193,9 +216,10 @@ formatter = { command = "taplo", args = ["format", "-"] }
 # -------------------------------------------------------------------------
 [[language]]
 name = "yaml"
-# YAML formatting is typically handled by the LSP (Taplo), no separate formatter needed
-language-servers = ["taplo", "harper-ls"]
-formatter = { command = "taplo", args = ["format", "-"] }
+file-types = ["yaml", "yml"]
+auto-format = true
+language-servers = ["yaml-language-server", "harper-ls"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
 
 # -------------------------------------------------------------------------
 # JAVASCRIPT (.js)

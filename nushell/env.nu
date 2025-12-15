@@ -83,11 +83,11 @@ $env.PATH = [
 $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 
 # Aliases
+
 alias l = ls -sam
 alias ll = ls -saml
 alias zls = zellij list-sessions
 alias zla = zellij list-aliases
-# alias rstsb = brew services restart sketchybar; brew services restart borders;
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
