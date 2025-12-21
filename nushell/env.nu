@@ -35,9 +35,6 @@ def rstsb [] {
     brew services restart borders
 }
 
-# $env.ZELLIJ_AUTO_ATTACH = true
-# $env.ZELLIJ_AUTO_EXIT = false
-
 # Use nushell functions to define your right and left prompt
 $env.PROMPT_COMMAND = {|| create_left_prompt }
 # FIXME: This default is not implemented in rust code as of 2023-09-08.
@@ -49,6 +46,7 @@ $env.PROMPT_INDICATOR = {|| "> " }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| ": " }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| "> " }
 $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
+$env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 # Docker socker
 $env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podman/podman-machine-default-api.sock"
@@ -58,6 +56,9 @@ $env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
 if $env.GHOSTTY_BIN_DIR? == null {
     $env.GHOSTTY_BIN_DIR = " /Applications/Ghostty.app/Contents/MacOS";
 }
+
+# Config shell
+$env.SHELL = "/opt/homebrew/bin/nu"
 
 # Default editor
 $env.EDITOR = "hx"
