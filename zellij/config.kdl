@@ -396,7 +396,7 @@ default_shell "nu"
  
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-scrollback_editor "/usr/local/bin/hx"
+scrollback_editor "/opt/homebrew/bin/hx"
  
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`
