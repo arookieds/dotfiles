@@ -67,8 +67,8 @@ display-inlay-hints = true
 
 [editor.file-picker]
 hidden = false
-ignore = false
-git-ignore = false
+ignore = true
+git-ignore = true
 
 [keys.normal]
 "=" = "format_selections"
@@ -76,7 +76,10 @@ git-ignore = false
 C-k = "copy_selection_on_prev_line"
 C-j = "copy_selection_on_next_line"
 
-[keys.normal.S-d.p]
-r = ":run-shell-command uv run %{buffer_name}"
+[keys.normal.C-p]
+r = ":run-shell-command zellij run -f -- uv run %{buffer_name}"
+t = ":run-shell-command zellij run -f -- uv run pytest"
+
+[keys.normal.S-d]
 s = ":run-shell-command debugpy --listen 127.0.0.1:5678 --wait-for-client --log-to logs %{buffer_name}"
 d = ":debug-remote 127.0.0.1:5678"
