@@ -266,3 +266,20 @@ name = "css"
 auto-format = true
 language-servers = ["css-language-server"]
 formatter = { command = "prettier", args = ["--stdin-filepath", "style.css"] }
+
+
+# -------------------------------------------------------------------------
+# D2 (.d2)
+# -------------------------------------------------------------------------
+[[language]]
+name = "d2"
+scope = "source.d2"
+file-types = ["d2"]
+grammar = "d2"
+roots = []
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "d2"
+source = { git = "https://github.com/ravsii/tree-sitter-d2", rev = "main" }
