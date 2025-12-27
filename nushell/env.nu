@@ -49,7 +49,7 @@ $env.PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 $env.TRANSIENT_PROMPT_MULTILINE_INDICATOR = {|| "::: " }
 
 # Docker socker
-$env.DOCKER_HOST = "unix:///var/folders/2j/hh70xwld7fz97ycq2c06_wcw0000gn/T/podman/podman-machine-default-api.sock"
+$env.DOCKER_HOST = "unix:///var/folders/ng/ct678qld7r74fhjfdj58wbqh0000gn/T/podman/podman-machine-default-api.sock"
 
 $env.STARSHIP_CONFIG = $"($env.HOME)/.config/starship/starship.toml"
 
