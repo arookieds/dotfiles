@@ -327,38 +327,15 @@ f = ['exec-and-forget open -a /Applications/Firefox.app', 'mode main']
 m = ['exec-and-forget open -a /System/Applications/Mail.app', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-1 = 'VG34VQL3A'
-2 = 'VG34VQL3A'
-3 = 'VG34VQL3A'
-4 = 'VG34VQL3A'
-5 = 'VG34VQL3A'
-6 = 'VG34VQL3A'
-7 = 'VG34VQL3A'
-8 = 'VG34VQL3A'
-9 = 'VG34VQL3A'
-10 = 'Odyssey G5'
-11 = 'Odyssey G5'
-12 = 'Odyssey G5'
-
-# [workspace-to-monitor-force-assignment]
-#     # 1 = 'S6-L'
-#     # 2 = 'S6-L'
-#     1 = 'VG34VQL3A'
-#     2 = 'VG34VQL3A'
-#     3 = 'S6-L'
-#     4 = 'S6-L'
-#     5 = 'S6-L'
-#     6 = 'S6-L'
-#     7 = 'S6-R'
-#     8 = 'S6-R'
-#     9 = 'S6-R'
-#     10 = 'S6-R'
-#     11 = 'S6-R'
-#     12 = 'S6-R'
-# [workspace-to-monitor-force-assignment]
-#     1 = 'main'
-#     2 = 'S6-L'
-#     3 = 'S6-R'
-#     4 = 'main'
-#     5 = 'S6-L'
-#     6 = 'S6-R'
+1 = ['VG34VQL3A', 'VG34VQL3A']
+2 = ['VG34VQL3A', 'VG34VQL3A']
+3 = ['VG34VQL3A', 'VG34VQL3A']
+4 = ['VG34VQL3A', 'S6-L']
+5 = ['VG34VQL3A', 'S6-L']
+6 = ['VG34VQL3A', 'S6-L']
+7 = ['VG34VQL3A', 'S6-L']
+8 = ['VG34VQL3A', 'S6-L']
+9 = ['VG34VQL3A', 'S6-L']
+10 = ['Odyssey G5', 'S6-R']
+11 = ['Odyssey G5', 'S6-R']
+12 = ['Odyssey G5', 'S6-R']
