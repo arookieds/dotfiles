@@ -27,6 +27,13 @@ detect-string-imports = true
 convention = "google"
 
 # -------------------------------------------------------------------------
+# Ty LSP
+# -------------------------------------------------------------------------
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
+# -------------------------------------------------------------------------
 # PYRIGHT LSP (NEW: For superior static type checking and core LSP features)
 # -------------------------------------------------------------------------
 [language-server.pyright]
@@ -103,7 +110,7 @@ args = ["--stdio"]
 name = "python"
 language-id = "python"
 auto-format = true
-language-servers = ["pyright", "ruff", "harper-ls"]
+language-servers = ["ty", "ruff", "harper-ls"]
 
 [language.debugger]
 name = "debugpy"
@@ -283,3 +290,17 @@ indent = { tab-width = 2, unit = "  " }
 [[grammar]]
 name = "d2"
 source = { git = "https://github.com/ravsii/tree-sitter-d2", rev = "main" }
+
+# -------------------------------------------------------------------------
+# Batch (.bat)
+# -------------------------------------------------------------------------
+[[language]]
+name = "batch"
+scope = "source.batch"
+file-types = ["bat", "cmd"]
+comment-token = "::"
+indent = { tab-width = 4, unit = "    " }
+
+[[grammar]]
+name = "batch"
+source = { git = "https://github.com/davidevofficial/tree-sitter-batch", rev = "main" }
