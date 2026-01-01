@@ -30,9 +30,23 @@ def create_right_prompt [] {
     ([$last_exit_code, (char space), $time_segment] | str join)
 }
 
-def rstsb [] {
+def restart_ui_services [] {
     brew services restart sketchybar
     brew services restart borders
+}
+
+def restart_ceph_services [] {
+    ssh tod-master "systemctl restart ceph-mon@*.service"
+    ssh tod-master "systemctl restart ceph-mgr@*.service"
+    ssh tod-master "systemctl restart ceph-osd@*.service"
+    
+    ssh tod-node1 "systemctl restart ceph-mon@*.service"
+    ssh tod-node1 "systemctl restart ceph-mgr@*.service"
+    ssh tod-node1 "systemctl restart ceph-osd@*.service"
+    
+    ssh tod-node2 "systemctl restart ceph-mon@*.service"
+    ssh tod-node2 "systemctl restart ceph-mgr@*.service"
+    ssh tod-node2 "systemctl restart ceph-osd@*.service"
 }
 
 # Use nushell functions to define your right and left prompt
