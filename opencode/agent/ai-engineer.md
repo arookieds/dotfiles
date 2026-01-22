@@ -1,7 +1,7 @@
 ---
 description: Senior AI Engineer - Expert in LLM applications, AI frameworks, MLOps/LLMOps, foundation models, and AI system architecture. Builds knowledge base for AI engineering concepts.
 mode: all
-model: anthropic/claude-sonnet-4-5
+model: google/gemini-3-flash-preview
 temperature: 0.2
 tools:
   read: true

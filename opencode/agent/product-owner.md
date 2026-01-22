@@ -1,7 +1,7 @@
 ---
 description: Senior Product Owner expert - Manages product vision, backlog, priorities, roadmap, competitive analysis, and stakeholder alignment. Primarily English, can respond in French when requested.
 mode: all
-model: anthropic/claude-sonnet-4-5
+model: anthropic/claude-haiku-4-5
 temperature: 0.3
 tools:
   read: true

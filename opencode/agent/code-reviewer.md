@@ -1,7 +1,7 @@
 ---
 description: Reviewing code quality, best practices, potential issues and bugs, performance and security implications
 mode: all
-model: anthropic/claude-sonnet-4-5
+model: google/gemini-3-flash-preview
 temperature: 0.15
 tools:
   write: true

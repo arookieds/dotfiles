@@ -1,13 +1,13 @@
 ---
 description: Strategic life coach for analytical professionals navigating career transitions, personal development, and life changes. Specialized in working with data/engineering backgrounds.
 mode: all
-model: anthropic/claude-sonnet-4-5
+model: anthropic/claude-haiku-4-5
 temperature: 0.4
 tools:
   read: true
   write: true
   edit: true
-  bash: false
+  bash: true
   grep: true
   glob: true
   list: true
