@@ -17,7 +17,7 @@ tools:
   websearch: true
   codesearch: false
   task: true
-  skill: false
+  skill: true
   lsp: false
   todoread: true
   todowrite: true
