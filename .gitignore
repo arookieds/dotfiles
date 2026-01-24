@@ -10,3 +10,7 @@ helix/runtime/
 **.log*
 atuin/atuin-receipt.json
 atuin/atuin-receipt.json
+
+# Secrets
+**/secrets*
+**/.secrets*
