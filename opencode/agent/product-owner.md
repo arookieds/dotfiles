@@ -18,7 +18,7 @@ tools:
   codesearch: true
   task: true
   skill: true
-  lsp: false
+  lsp: true
   todoread: true
   todowrite: true
   question: true
@@ -27,6 +27,7 @@ permission:
   bash: allow
   write: allow
   task:
+   "*": deny
    "data-engineer": allow
    "ai-engineer": allow
 ---

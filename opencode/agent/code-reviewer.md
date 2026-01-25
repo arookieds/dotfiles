@@ -1,12 +1,13 @@
 ---
 description: Reviewing code quality, best practices, potential issues and bugs, performance and security implications
-mode: all
+mode: subagent
 model: google/gemini-3-flash-preview
 temperature: 0.15
 tools:
   write: true
   edit: false
   bash: false
+  task: false
 ---
 
 ## Role

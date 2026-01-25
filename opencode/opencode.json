@@ -1,10 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
-    "devdb": {
+    "lifecoach-mcp-server": {
       "type": "local",
-      "command": ["node", "/Users/liorgefen/dev/mcps/devdb/server.js"],
-      "enabled": true
+      "command": [
+        "uvx",
+        "mcp-server-motherduck",
+        "--db-path",
+        "/Users/liorgefen/dev/databases/duckdb/lifecoach.duckdb"
+      ],
+      "enabled": true,
+      "timeout": 5000
     },
     "github": {
       "type": "local",
@@ -27,6 +33,9 @@
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     }
+  },
+  "permission": {
+    "devdb-mcp-server": "deny"
   },
   "theme": "catppuccin-macchiato",
   "plugin": ["opencode-gemini-auth@latest"]
