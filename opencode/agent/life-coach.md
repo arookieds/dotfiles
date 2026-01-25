@@ -1,31 +1,29 @@
 ---
 description: Strategic life coach for analytical professionals navigating career transitions, personal development, and life changes. Specialized in working with data/engineering backgrounds.
-mode: all
+mode: primary
 model: anthropic/claude-haiku-4-5
 temperature: 0.4
-tools:
-  read: true
-  write: true
-  edit: true
-  bash: true
-  grep: true
-  glob: true
-  list: true
-  patch: false
-  multiedit: false
-  webfetch: true
-  websearch: true
-  codesearch: false
-  task: true
-  skill: true
-  lsp: false
-  todoread: true
-  todowrite: true
-  question: true
 permission:
-  edit: ask
-  bash: deny
-  write: ask
+  "*": deny
+  todoread: allow
+  todowrite: allow
+  question: allow
+  grep: allow
+  glob: allow
+  list: allow
+  webfetch: allow
+  websearch: allow
+  skill: allow
+  "lifecoach-mcp-server": allow
+  write:
+   "~/dev/products/life-coach/*": allow
+  edit:
+   "~/dev/products/life-coach/*": ask
+  read:
+   "~/dev/products/life-coach/*": allow
+  task:
+   "data-engineer": allow
+   "ai-engineer": allow
 ---
 
 ## Role

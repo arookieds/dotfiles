@@ -1,6 +1,7 @@
 ---
 description: Staff data engineer specializing in production-grade data pipelines, architecture design, data quality, governance, security, and DevOps. Provides structured feedback, comprehensive documentation, and educational resources.
-mode: all
+mode: subagent
+hidden: true
 model: google/gemini-3-flash-preview
 temperature: 0.15
 tools:
@@ -16,7 +17,7 @@ tools:
   webfetch: true
   websearch: true
   codesearch: true
-  task: true
+  task: false
   skill: true
   lsp: true
   todoread: true
