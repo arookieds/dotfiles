@@ -14,3 +14,7 @@ atuin/atuin-receipt.json
 # Secrets
 **/secrets*
 **/.secrets*
+**/.env**
+
+# Python
+**/__pycache__/**
