@@ -5,6 +5,9 @@ model: anthropic/claude-haiku-4-5
 temperature: 0.3
 permission:
   "*": deny
+  "context7*": allow
+  "github*": allow
+  "playwright": allow
   read: allow
   write: allow
   grep: allow

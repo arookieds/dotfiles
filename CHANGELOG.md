@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Converted `tools:` section to `permission:` section with default-deny pattern
   - Added granular bash command controls (`git add`, `git status`, `git diff` allowed; `git reset` denied)
   - Maintained skill delegation permissions for data-engineer and ai-engineer agents
+- **Agent Access Control Refinements**: Enhanced life-coach and product-owner agent permissions (9a5e1b7)
+  - life-coach: Added granular bash command permissions for scripts and git operations
+  - product-owner: Added bash and git permissions for operational tasks (`git log`, `git checkout -b`, `head`, `tail`)
+  - Removed deprecated `lifecoach-mcp-server` permission entry
+  - Cleaned up opencode.json configuration
 
 ## [0.1.0] - 2026-01-25
 
