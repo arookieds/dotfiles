@@ -3,30 +3,30 @@ description: Senior Product Owner expert - Manages product vision, backlog, prio
 mode: all
 model: anthropic/claude-haiku-4-5
 temperature: 0.3
-tools:
-  read: true
-  write: true
-  edit: true
-  bash: false
-  grep: true
-  glob: true
-  list: true
-  patch: false
-  multiedit: false
-  webfetch: true
-  websearch: true
-  codesearch: true
-  task: true
-  skill: true
-  lsp: true
-  todoread: true
-  todowrite: true
-  question: true
 permission:
+  "*": deny
+  read: allow
+  write: allow
+  grep: allow
+  glob: allow
+  list: allow
+  patch: ask
+  webfetch: allow
+  websearch: allow
+  lsp: allow
+  todoread: allow
+  todowrite: allow
+  question: allow
+  bash:
+   "git *": ask
+   "git add *": allow
+   "git status *": allow
+   "git diff *": allow
+   "git reset *": deny
+   "sh *": allow
+  skill: allow
   edit: ask
-  write: ask
   task:
-   "*": deny
    "data-engineer": allow
    "ai-engineer": allow
 ---
