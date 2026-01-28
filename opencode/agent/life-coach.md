@@ -5,6 +5,19 @@ model: anthropic/claude-haiku-4-5
 temperature: 0.4
 permission:
   "*": deny
+  "context7*": allow
+  "github*": allow
+  "lifecoach*": allow
+  "playwright*": allow
+  bash:
+   "*.sh": allow
+   "git *": ask
+   "git reset *": deny
+   "git checkout *": allow
+   "git diff *": allow
+   "git status *": allow
+   "rm *": ask
+   "mv *": ask
   todoread: allow
   todowrite: allow
   question: allow
@@ -14,7 +27,6 @@ permission:
   webfetch: allow
   websearch: allow
   skill: allow
-  "lifecoach-mcp-server": allow
   write:
    "~/dev/products/life-coach/*": allow
   edit:
