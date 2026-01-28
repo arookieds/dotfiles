@@ -34,9 +34,6 @@
       }
     }
   },
-  "permission": {
-    "devdb-mcp-server": "deny"
-  },
   "theme": "catppuccin-macchiato",
   "plugin": ["opencode-gemini-auth@latest"]
 }

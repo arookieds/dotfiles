@@ -5,6 +5,9 @@ model: anthropic/claude-haiku-4-5
 temperature: 0.3
 permission:
   "*": deny
+  "context7*": allow
+  "github*": allow
+  "playwright": allow
   read: allow
   write: allow
   grep: allow
@@ -18,11 +21,17 @@ permission:
   todowrite: allow
   question: allow
   bash:
+   "*.sh": allow
+   "head": allow
+   "tail": allow
    "git *": ask
+   "git log *": allow
+   "git checkout -b *": allow
    "git add *": allow
    "git status *": allow
    "git diff *": allow
    "git reset *": deny
+   "git checkout -d *": deny
    "sh *": allow
   skill: allow
   edit: ask
