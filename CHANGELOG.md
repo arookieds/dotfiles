@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - product-owner: Added bash and git permissions for operational tasks (`git log`, `git checkout -b`, `head`, `tail`)
   - Removed deprecated `lifecoach-mcp-server` permission entry
   - Cleaned up opencode.json configuration
+- **MCP Access Grants**: Granted product-owner agent access to critical MCPs (5b42429)
+  - GitHub MCP (`github*`) for PR creation and repository management
+  - Context7 MCP for documentation queries and context management
+  - Playwright MCP for browser automation capabilities
 
 ## [0.1.0] - 2026-01-25
 
