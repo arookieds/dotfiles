@@ -4,29 +4,39 @@ mode: subagent
 hidden: true
 model: google/gemini-3-flash-preview
 temperature: 0.15
-tools:
-  read: true
-  write: true
-  edit: true
-  bash: true
-  grep: true
-  glob: true
-  list: true
-  patch: true
-  multiedit: true
-  webfetch: true
-  websearch: true
-  codesearch: true
-  task: false
-  skill: true
-  lsp: true
-  todoread: true
-  todowrite: true
-  question: true
 permission:
-  edit: allow
-  bash: ask
+  "*": deny
+  "context7*": allow
+  "github*": allow
+  "playwright": allow
+  "knowledgebase*": allow
+  "fitby-mcp-filesystem*": allow
+  read: allow
   write: allow
+  edit: ask
+  grep: allow
+  glob: allow
+  list: allow
+  patch: ask
+  webfetch: allow
+  websearch: allow
+  lsp: allow
+  question: allow
+  skill: allow
+  bash:
+   "*.sh": allow
+   "head *": allow
+   "tail *": allow
+   "curl *": allow
+   "jq *": allow
+   "python3 *": allow
+   "uv *": allow
+   "uvx *": allow
+   "cat *": allow
+   "git *": ask
+   "git log *": allow
+   "git status *": allow
+   "git diff *": allow
 ---
 
 ## Role

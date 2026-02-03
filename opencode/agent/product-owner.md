@@ -32,6 +32,7 @@ permission:
    "uvx *": allow
    "cat *": allow
    "git *": ask
+   "git push *": allow
    "git log *": allow
    "git checkout -b *": allow
    "git add *": allow

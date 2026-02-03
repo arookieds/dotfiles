@@ -12,8 +12,27 @@
       "command": [
         "rust-mcp-filesystem",
         "--allow-write",
-        "~/dev/products/life-coach",
+        "~/dev/products/life-coach"
+      ],
+      "enabled": true,
+      "timeout": 5000
+    },
+    "fitby-mcp-filesystem": {
+      "type": "local",
+      "command": [
+        "rust-mcp-filesystem",
+        "--allow-write",
         "~/dev/products/fitby"
+      ],
+      "enabled": true,
+      "timeout": 5000
+    },
+    "knowledgebase-mcp-filesystem": {
+      "type": "local",
+      "command": [
+        "rust-mcp-filesystem",
+        "--allow-write",
+        "~/dev/documentation"
       ],
       "enabled": true,
       "timeout": 5000
