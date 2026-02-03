@@ -32,6 +32,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Agent Permission Refinements**:
   - product-owner: Added `lifecoach*` MCP permission
   - Removed unnecessary `sh *` permission from product-owner
+- **Ai-Engineer & Data-Engineer Permission Migration**: Migrated to granular permission model (668c205)
+  - Converted from boolean `tools:` config to `permission:` with default-deny pattern
+  - Added MCP access: context7, github, playwright, knowledgebase, fitby-filesystem
+  - Added bash command permissions: *.sh scripts, curl, jq, python3, uv, uvx, cat, git operations
+  - Standardized permission structure across all agents
+- **Additional MCP Integrations**: Expanded MCP filesystem support
+  - Added fitby-mcp-filesystem for Fitby product development
+  - Added knowledgebase-mcp-filesystem for documentation access
+  - Configured granular filesystem permissions for each project
+- **Product-Owner Git Push Permission**: Added `git push *` permission to support PR and merge workflows
 
 ## [0.1.0] - 2026-01-25
 
