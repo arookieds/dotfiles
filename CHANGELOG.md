@@ -17,6 +17,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - product-owner: Added bash and git permissions for operational tasks (`git log`, `git checkout -b`, `head`, `tail`)
   - Removed deprecated `lifecoach-mcp-server` permission entry
   - Cleaned up opencode.json configuration
+- **MCP Access Grants**: Granted product-owner agent access to critical MCPs (5b42429)
+  - GitHub MCP (`github*`) for PR creation and repository management
+  - Context7 MCP for documentation queries and context management
+  - Playwright MCP for browser automation capabilities
+- **Enhanced Agent Bash Permissions**: Added utility commands to both agents
+  - life-coach & product-owner: Added `curl`, `jq`, `python3`, `uv`, `uvx`, `cat` commands
+  - life-coach: Updated path patterns to absolute paths for consistency
+- **MCP Configuration Updates**: Added and refined lifecoach MCPs
+  - Added lifecoach-mcp-postgres for database operations
+  - Added lifecoach-mcp-filesystem for file system access
+  - Disabled lifecoach-mcp-server (legacy) in favor of new MCPs
+- **Shell Configuration Fix**: Updated Nushell config to use `$nu.home-dir` instead of deprecated `$nu.home-path`
+- **Agent Permission Refinements**:
+  - product-owner: Added `lifecoach*` MCP permission
+  - Removed unnecessary `sh *` permission from product-owner
+- **Ai-Engineer & Data-Engineer Permission Migration**: Migrated to granular permission model (668c205)
+  - Converted from boolean `tools:` config to `permission:` with default-deny pattern
+  - Added MCP access: context7, github, playwright, knowledgebase, fitby-filesystem
+  - Added bash command permissions: *.sh scripts, curl, jq, python3, uv, uvx, cat, git operations
+  - Standardized permission structure across all agents
+- **Additional MCP Integrations**: Expanded MCP filesystem support
+  - Added fitby-mcp-filesystem for Fitby product development
+  - Added knowledgebase-mcp-filesystem for documentation access
+  - Configured granular filesystem permissions for each project
+- **Product-Owner Git Push Permission**: Added `git push *` permission to support PR and merge workflows
 
 ## [0.1.0] - 2026-01-25
 

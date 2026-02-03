@@ -8,6 +8,7 @@ permission:
   "context7*": allow
   "github*": allow
   "playwright": allow
+  "lifecoach*": allow
   read: allow
   write: allow
   grep: allow
@@ -24,7 +25,14 @@ permission:
    "*.sh": allow
    "head": allow
    "tail": allow
+   "curl *": allow
+   "jq *": allow
+   "python3 *": allow
+   "uv *": allow
+   "uvx *": allow
+   "cat *": allow
    "git *": ask
+   "git push *": allow
    "git log *": allow
    "git checkout -b *": allow
    "git add *": allow
@@ -32,7 +40,6 @@ permission:
    "git diff *": allow
    "git reset *": deny
    "git checkout -d *": deny
-   "sh *": allow
   skill: allow
   edit: ask
   task:

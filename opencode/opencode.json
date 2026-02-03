@@ -1,6 +1,42 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
+    "lifecoach-mcp-postgres": {
+      "type": "remote",
+      "url": "http://localhost:5678/mcp",
+      "enabled": true,
+      "timeout": 10000
+    },
+    "lifecoach-mcp-filesystem": {
+      "type": "local",
+      "command": [
+        "rust-mcp-filesystem",
+        "--allow-write",
+        "~/dev/products/life-coach"
+      ],
+      "enabled": true,
+      "timeout": 5000
+    },
+    "fitby-mcp-filesystem": {
+      "type": "local",
+      "command": [
+        "rust-mcp-filesystem",
+        "--allow-write",
+        "~/dev/products/fitby"
+      ],
+      "enabled": true,
+      "timeout": 5000
+    },
+    "knowledgebase-mcp-filesystem": {
+      "type": "local",
+      "command": [
+        "rust-mcp-filesystem",
+        "--allow-write",
+        "~/dev/documentation"
+      ],
+      "enabled": true,
+      "timeout": 5000
+    },
     "lifecoach-mcp-server": {
       "type": "local",
       "command": [
@@ -9,7 +45,7 @@
         "--db-path",
         "/Users/liorgefen/dev/databases/duckdb/lifecoach.duckdb"
       ],
-      "enabled": true,
+      "enabled": false,
       "timeout": 5000
     },
     "github": {
