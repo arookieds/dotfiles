@@ -11,6 +11,12 @@ permission:
   "playwright*": allow
   bash:
    "*.sh": allow
+   "curl *": allow
+   "jq *": allow
+   "python3 *": ask
+   "uv *": allow
+   "uvx *": allow
+   "cat *": allow
    "git *": ask
    "git reset *": deny
    "git checkout *": allow
@@ -28,11 +34,11 @@ permission:
   websearch: allow
   skill: allow
   write:
-   "~/dev/products/life-coach/*": allow
+   "/Users/liorgefen/dev/products/life-coach": allow
   edit:
-   "~/dev/products/life-coach/*": ask
+   "/Users/liorgefen/dev/products/life-coach": ask
   read:
-   "~/dev/products/life-coach/*": allow
+   "/Users/liorgefen/dev/products/life-coach": allow
   task:
    "data-engineer": allow
    "ai-engineer": allow

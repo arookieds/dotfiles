@@ -21,6 +21,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - GitHub MCP (`github*`) for PR creation and repository management
   - Context7 MCP for documentation queries and context management
   - Playwright MCP for browser automation capabilities
+- **Enhanced Agent Bash Permissions**: Added utility commands to both agents
+  - life-coach & product-owner: Added `curl`, `jq`, `python3`, `uv`, `uvx`, `cat` commands
+  - life-coach: Updated path patterns to absolute paths for consistency
+- **MCP Configuration Updates**: Added and refined lifecoach MCPs
+  - Added lifecoach-mcp-postgres for database operations
+  - Added lifecoach-mcp-filesystem for file system access
+  - Disabled lifecoach-mcp-server (legacy) in favor of new MCPs
+- **Shell Configuration Fix**: Updated Nushell config to use `$nu.home-dir` instead of deprecated `$nu.home-path`
+- **Agent Permission Refinements**:
+  - product-owner: Added `lifecoach*` MCP permission
+  - Removed unnecessary `sh *` permission from product-owner
 
 ## [0.1.0] - 2026-01-25
 
