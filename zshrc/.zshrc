@@ -16,3 +16,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Added by Antigravity
 export PATH="/Users/liorgefen/.antigravity/antigravity/bin:$PATH"
 alias ssh_nu="/opt/homebrew/bin/nu --config $HOME/.config/nushell/config.nu --env-config $HOME/.config/nushell/env.nu"
+
+# OpenClaw Completion
+source "/Users/liorgefen/.openclaw/completions/openclaw.zsh"

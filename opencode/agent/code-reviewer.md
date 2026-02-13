@@ -1,13 +1,11 @@
 ---
 description: Reviewing code quality, best practices, potential issues and bugs, performance and security implications
-mode: subagent
-model: google/gemini-3-flash-preview
+mode: primary
+model: ollama/qwen2.5-coder:7b
 temperature: 0.15
-tools:
-  write: true
-  edit: false
-  bash: false
-  task: false
+permission:
+  read: allow
+  write: allow
 ---
 
 ## Role
