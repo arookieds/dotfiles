@@ -1,0 +1,121 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "languages": {
+    "Python": {
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+      },
+      "formatter": {
+        "language_server": {
+          "name": "ruff",
+        },
+      },
+    },
+  },
+  "ui_font_family": "Hack Nerd Font Mono",
+  "indent_guides": {
+    "enabled": true,
+    "background_coloring": "disabled",
+    "coloring": "indent_aware",
+    "active_line_width": 5,
+    "line_width": 2,
+  },
+  "show_wrap_guides": true,
+  "auto_indent": true,
+  "auto_indent_on_paste": true,
+  "soft_wrap": "bounded",
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "bottom_dock_layout": "contained",
+  "terminal": {
+    "shell": {
+      "program": "nu",
+    },
+  },
+  "agent": {
+    "agents_panel_dock": "right",
+    "button": true,
+    "commit_message_model": {
+      "provider": "ollama",
+      "model": "codellama:7b",
+    },
+    "dock": "right",
+    "always_allow_tool_actions": false,
+  },
+  "minimap": {
+    "display_in": "active_editor",
+    "show": "always",
+  },
+  "toolbar": {
+    "code_actions": true,
+  },
+  "git_panel": {
+    "tree_view": true,
+    "dock": "right",
+    "sort_by_path": true,
+    "button": true,
+  },
+  "wrap_guides": [80, 89, 100],
+  "helix_mode": true,
+  "active_pane_modifiers": {
+    "border_size": 2,
+    "inactive_opacity": 0.65,
+  },
+  "disable_ai": false,
+  "context_servers": {
+    "mcp-server-playwright": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "browser": "firefox",
+        "headless": true,
+      },
+    },
+    "knowledgebase-mcp-filesystem": {
+      "enabled": true,
+      "remote": false,
+      "command": "rust-mcp-filesystem",
+      "args": ["--allow-write", "~/dev/documentation"],
+      "env": {},
+    },
+    "fitby-mcp-postgres": {
+      "url": "http://localhost:5678/mcp",
+      "headers": {},
+      "settings": {},
+      "timeout": 5000,
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": "{env:CONTEXT7_API_KEY}",
+      },
+    },
+    "mcp-server-github": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "github_personal_access_token": "{env:GITHUB_TOKEN}",
+      },
+    },
+  },
+  "autosave": "on_focus_change",
+  "base_keymap": "VSCode",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Catppuccin Macchiato",
+  },
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 18,
+  "theme": "Catppuccin Macchiato",
+}

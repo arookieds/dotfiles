@@ -15,7 +15,13 @@ echo "🛡️ Running PII-Guard (Template-Aware)..."
 
 # Capture result to catch 'FAIL' strings or exit status 1
 # We explicitly trigger the 'HEADLESS' logic in the SKILL.md
-RESULT=$(opencode run --agent product-owner "HEADLESS: pii-guard scan. Ignore patterns wrapped in {}. Return 'FAIL' if real PII found.")
+RESULT=$(gemini -m gemini-3-pro-preview -p """
+  - !!!You are not to add any additional file to the commit!!!
+  - pii-guard scan
+  - Ignore patterns wrapped in {}
+  - Return 'FAIL' if real PII found
+  - !!!You are not to add any additional file to the commit!!!
+  """)
 
 if [[ "$RESULT" == *"FAIL"* ]] || [[ "$RESULT" == *"status 1"* ]] || [[ "$RESULT" == *"VIOLATION"* ]]; then
   echo "❌ COMMIT BLOCKED: PII/PHI detected by security agent."
